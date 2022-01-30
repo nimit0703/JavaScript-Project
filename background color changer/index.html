@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background color changer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Montserrat:ital,wght@0,100;0,200;1,600&family=Spartan:wght@300&display=swap');
+        .btn{
+            align-items: center;
+            align-content: center;
+            margin-top: 20%;
+            margin-left: 40%;
+            
+        }
+        button{
+            width: 100px;
+            height: 50px;
+            border-radius: 15px;
+            font-size: 16px;
+            font-family:"Spartan", sans-serif;
+            background-color: blueviolet;
+            border: none;
+            color: #fff;
+        }
+        p#color{
+            font-size: 30px;
+            color:#fff
+
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="btn">
+            <button onclick="changeBG()"> Click Me</button>
+            <p id="color"></p>
+        </div>
+    </div>
+
+
+
+    <script>
+       function changeBG(){
+        const button=document.getElementsByTagName("button");
+        const colors= ["#26495c", "#c4a35a", "#c66b3d", "#e5e5dc","#8a307f", "#79a7d3", "#6883bc","#aed6dc", "#ff9a8d", "#4a536b"];
+        const i =parseInt(Math.random()*colors.length)
+        // const text = doc
+        document.getElementById("color").innerHTML = "Color Code : " + colors[i];
+        document.body.style.backgroundColor = colors[i];
+        // document.body.style.backgroundColor = colors[parseInt(Math.random()*colors.length)];
+       
+       }
+
+
+
+    </script>
+
+
+
+
+
+
+</body>
+</html>
