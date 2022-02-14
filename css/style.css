@@ -20,6 +20,7 @@ body{
 }
 img{
     border-radius: 20px;
+    margin: 5px 20px;
     border: 2px solid rgb(248, 239, 108);
 }
 img:hover{
@@ -28,6 +29,7 @@ img:hover{
 }
 .projectName a{
     text-decoration: none;
+    margin:5px 15px;
     color: rgb(72, 0, 87);
 }
 .projectName a:hover{
