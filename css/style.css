@@ -15,6 +15,7 @@ body{
     font-size: 25px;
 }
 .imageContainer{
+    display:inline-block;
     margin: 10px;
 }
 img{
