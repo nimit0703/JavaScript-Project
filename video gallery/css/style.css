@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  box-sizing: border-box;
+  /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  text-transform: capitalize;
+}
+
+.container {
+  position: relative;
+}
+
+.container .slider .slide {
+  min-height: 100vh;
+  z-index: -1;
+  position: relative;
+  overflow: hidden;
+}
+
+.container .slider .slide video{
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 100%;
+  z-index: -1;
+  width: 100%;
+  object-fit: cover;
+  animation: fadeIn .4s linear;
+}
+
+@keyframes fadeIn{
+    0%{
+        transform: scale(1.5);
+    }
+}
+.container .slider .slide .texts {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-flow: column;
+  background: rgba(0, 0, 0, 0.7);
+  text-align: center;
+}
+
+.container .slider .slide .texts h2 {
+  font-size: 60px;
+  color: #fff;
+  text-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  animation: animate .4s linear .4s backwards;
+}
+
+.container .slider .slide .texts p {
+    font-size: 15px;
+    color: #ddd;
+    margin: 10px auto;
+    padding: 5px 0px;
+    font-weight: lighter;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    max-width: 700px;
+    animation: animate .4s linear .6s backwards;
+}
+
+
+.btn{
+  z-index: 1;
+  position: absolute;
+  margin: auto;
+  display: inline-block;
+  top: 65%;
+  left: 2%;
+  padding: 10px 30px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  background: #fff;
+  color: #333;
+  font-weight: bold;
+  font-size: 17px;
+  margin: 10px 550px;
+  transition: .2s linear;
+  animation: animate .4s linear 1s backwards;
+}
+
+.btn:hover{
+  letter-spacing: 3.5px;
+  background-color: gold;
+}
+
+@keyframes animate{
+    0%{
+        opacity: 0;
+        transform: scale(.5s) translateY(-50px);
+    }
+}
+
+
+.container .slider{
+    display: none;
+}
+.container .slider.active{
+    display: block;
+}
+
+.container #next,.container #prev{
+   position: absolute;
+   top: 50%; 
+   transform: translateY(-50%);
+   z-index: 100;
+   background: #fff;
+   color: #333;
+   font-weight:bold ;
+   height: 60px;
+   width: 55px;
+   line-height: 55px;
+   font-size: 25px;
+   cursor: pointer;
+   padding: 2px 15px;
+}
+.container #next:hover,.container #prev:hover{
+  background: gold;
+}
+.container #next{
+  right: 0;
+}
+
+.container #prev{
+  left: 0;
+}
+
