@@ -5,14 +5,15 @@ const search = ()=>{
     const pname = storeitems.getElementsByTagName("h2");
 
     for(var i=0; i< pname.length;i++){
-        // let match = product[i].getElementsByTagName['h2'][0];
-        console.log(product[i]);
+        let match = product[i].getElementsByTagName("h2")[0];
+        console.log(match);
         if(match){
             let textvalue = match.textContent || match.innerHTML
+            console.log(textvalue)
             if(textvalue.toUpperCase().indexOf(searchbox)>-1){
-                product[i].style.disply="";
+                product[i].style.display="";
             }else{
-                product[i].style.disply="none"
+                product[i].style.display="none";
             }
         }
     }
