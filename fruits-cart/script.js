@@ -7,16 +7,37 @@ const fruites = {
   banana: { price: 12, amount: 352 },
 };
 
+const welcomeMsg = "";
 //var
 var amount = 0;
 var totalBill = 0;
 var shipping = 0;
 
+setInterval(() => {
+  var date = new Date();
+  document.getElementById(
+    "time"
+  ).innerHTML = `<h1>${date.getHours()}: </h1><h2>${date.getMinutes()}: </h2><h3>${date.getSeconds()}</h3>`;
+  // console.log(date);
+}, 1000);
+
 //windos method
 window.onload = () => {
+  let str = "Welcome ,To Fruit Shop".split("");
+
+  const interval = setInterval(() => {
+    let msg = (document.getElementById("welcome").innerHTML += str[0]);
+    str = str.slice(1);
+
+    if (!str.length) {
+      clearInterval(interval);
+    }
+  }, 600);
+
+  /**this method will set defaults */
   setAmmountAndPrices();
 };
-
+//functions
 function addFruitToCart(pices, price) {
   var amount = pices * price;
   var shipping = amount >= 250 ? 0 : 99;
@@ -24,9 +45,19 @@ function addFruitToCart(pices, price) {
   document.getElementById("amount").innerHTML = amount;
   document.getElementById("shipping").innerHTML = shipping;
   document.getElementById("total-bill").innerHTML = totalBill;
+
+
+  /**Promise
+   * that everything is added to cart Successfully
+   * now you can continue
+   */
+  return new Promise((resolve) => {
+    resolve("Everything is added to cart nicely");
+  });
 }
 
 function addMangoes() {
+  //let
   let weHave = fruites.mango.amount;
   let cusWant = Number(document.getElementById("cust-mango-amount").value);
   if (cusWant === 0) {
@@ -42,17 +73,23 @@ function addMangoes() {
   } else {
     if (confirm("Press a button!\nEither OK or Cancel.")) {
       let price = fruites.mango.price;
-      addFruitToCart(cusWant, price);
-      let itemLeft = weHave - cusWant;
-      console.log(fruites.mango);
-      fruites.mango.amount = itemLeft;
-      console.log(fruites.mango);
-      document.getElementById("mango-ammount").innerHTML = fruites.mango.amount;
-      document.getElementById("cust-mango-amount").value = 0;
+      /**
+       * 
+       * here is 
+       * our
+       * promise call
+       * 
+       */
+      addFruitToCart(cusWant, price).then((msg) => {
+        console.log("msg"+msg);
+        let itemLeft = weHave - cusWant;
+        fruites.mango.amount = itemLeft;
+        document.getElementById("mango-ammount").innerHTML = fruites.mango.amount;
+        document.getElementById("cust-mango-amount").value = 0;
+      });
     }
   }
 
-  console.log(weHave, cusWant);
 }
 function addOranges() {
   let weHave = fruites.orange.amount;
@@ -72,16 +109,12 @@ function addOranges() {
       let price = fruites.orange.price;
       addFruitToCart(cusWant, price);
       let itemLeft = weHave - cusWant;
-      console.log(fruites.orange);
       fruites.orange.amount = itemLeft;
-      console.log(fruites.orange);
       document.getElementById("orange-ammount").innerHTML =
         fruites.orange.amount;
       document.getElementById("cust-orange-amount").value = 0;
     }
   }
-
-  console.log(weHave, cusWant);
 }
 function addBananas() {
   let weHave = fruites.banana.amount;
@@ -101,16 +134,12 @@ function addBananas() {
       let price = fruites.banana.price;
       addFruitToCart(cusWant, price);
       let itemLeft = weHave - cusWant;
-      console.log(fruites.banana);
       fruites.banana.amount = itemLeft;
-      console.log(fruites.banana);
       document.getElementById("banana-ammount").innerHTML =
         fruites.banana.amount;
       document.getElementById("cust-banana-amount").value = 0;
     }
   }
-
-  console.log(weHave, cusWant);
 }
 
 function addApples() {
@@ -131,16 +160,12 @@ function addApples() {
       let price = fruites.apples.price;
       addFruitToCart(cusWant, price);
       let itemLeft = weHave - cusWant;
-      console.log(fruites.apples);
       fruites.apples.amount = itemLeft;
-      console.log(fruites.apples);
       document.getElementById("apple-ammount").innerHTML =
         fruites.apples.amount;
       document.getElementById("cust-apple-amount").value = 0;
     }
   }
-
-  console.log(weHave, cusWant);
 }
 //function
 function setAmmountAndPrices() {
@@ -161,6 +186,7 @@ function setAmmountAndPrices() {
   var amount = 0;
   var totalBill = 0;
   var shipping = 0;
+  
   document.getElementById("amount").innerHTML = amount;
   document.getElementById("shipping").innerHTML = shipping;
   document.getElementById("total-bill").innerHTML = totalBill;

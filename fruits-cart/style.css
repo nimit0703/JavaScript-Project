@@ -1,3 +1,16 @@
+body{
+  
+  /* background-image: url("https://images.unsplash.com/photo-1464618663641-bbdd760ae84a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"); */
+  /* opacity: 1;  */
+  background-color: rgba(251, 143, 1, 0.112);
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.85;
+  top: 0;
+}
+
+
+
 .gradient-hover-effect {
   display: flex;
   padding: 0.875em 2em;
@@ -24,14 +37,46 @@
 }
 .card-text{
   /* min-height: 30px; */
-    height: 170px;
+    height: 127px;
     overflow-y: hidden;
 }
 .card{
-    height: 670px;
+    height: 630px;
 }
 .pricing-sec{
-    margin-top: 10px;
+    /* margin-top: 10px; */
     display: block;
     bottom: 20px;
+}
+
+h1{
+
+  font-size: 2.5em;
+  color: #ff8810;
+  display: inline;
+}
+h2{
+  font-size: 1.75em;
+  color: #ff8810ef;
+  display: inline;
+}
+h3{
+  font-size: 1em;
+  color: #ff8810db;
+  display: inline;
+}
+
+
+
+
+#time{
+margin-left: 20px;
+}
+
+.text-right{
+  font-weight: bold;
+}
+
+#welcome{
+  display: inline;
 }
