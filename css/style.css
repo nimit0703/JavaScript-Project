@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     font-size: 10px;
+    text-decoration: none;    
+
 }
 body{
     background-color: #bda1ff;
@@ -10,33 +12,30 @@ body{
     text-align: center;
     margin: 20px;
     font-size: 3rem;
-    color: #fff;
-}
-.container{
-    display: flex;
+    color: #713ced;
 }
 
+
 .container img{
-    margin: 2rem 5rem;
+    background-image: cover;
     border-radius: 20px;
-    width: 300px;
-    height: 200px;
-    border: 2px solid rgb(248, 239, 108);
+    width: 1240px;
+    height: 725px;
+    border: 2px solid rgb(0, 0, 0);
 }
 .container img:hover{
     border-radius: 20px;
-    border: 2px solid #ffffff;
+    border: 2px solid #e15454;
 }
 
-.container figcaption{
-    font-size: 2.5rem;
-    margin: 0rem 5rem;
-   
+
+p{
+
+    margin-top: 20px;
+    font-size: 2em;
 }
-.container figcaption:hover{
-    color: #fff;
-   
-}
-figure a{
+a:link{
     text-decoration: none;
+    color: black;
+    
 }
