@@ -13,6 +13,8 @@ var amount = 0;
 var totalBill = 0;
 var shipping = 0;
 
+
+
 setInterval(() => {
   var date = new Date();
   document.getElementById(
@@ -39,7 +41,12 @@ window.onload = () => {
 };
 //functions
 function addFruitToCart(pices, price) {
-  var amount = pices * price;
+
+  let allreadyAmount = Number(document.getElementById("amount").innerHTML);
+
+  console.log("allready:",allreadyAmount);
+
+  var amount = allreadyAmount+(pices * price);
   var shipping = amount >= 250 ? 0 : 99;
   var totalBill = amount + shipping;
   document.getElementById("amount").innerHTML = amount;
@@ -60,7 +67,7 @@ function addMangoes() {
   //let
   let weHave = fruites.mango.amount;
   let cusWant = Number(document.getElementById("cust-mango-amount").value);
-  if (cusWant === 0) {
+  if (cusWant  <= 0) {
     document.getElementById("mango-error").classList.add("text-danger");
     setTimeout(() => {
       document.getElementById("mango-error").classList.remove("text-danger");
@@ -71,7 +78,7 @@ function addMangoes() {
     ).innerHTML = `We have only ${weHave} Pc`;
     document.getElementById("mango-error").classList.add("text-danger");
   } else {
-    if (confirm("Press a button!\nEither OK or Cancel.")) {
+    if (confirm("Press Ok to Place Order ")) {
       let price = fruites.mango.price;
       /**
        * 
@@ -94,7 +101,7 @@ function addMangoes() {
 function addOranges() {
   let weHave = fruites.orange.amount;
   let cusWant = Number(document.getElementById("cust-orange-amount").value);
-  if (cusWant === 0) {
+  if (cusWant  <= 0) {
     document.getElementById("orange-error").classList.add("text-danger");
     setTimeout(() => {
       document.getElementById("orange-error").classList.remove("text-danger");
@@ -105,7 +112,7 @@ function addOranges() {
     ).innerHTML = `We have only ${weHave} Pc`;
     document.getElementById("orange-error").classList.add("text-danger");
   } else {
-    if (confirm("Press a button!\nEither OK or Cancel.")) {
+    if (confirm("Press Ok to Place Order ")) {
       let price = fruites.orange.price;
       addFruitToCart(cusWant, price);
       let itemLeft = weHave - cusWant;
@@ -119,7 +126,7 @@ function addOranges() {
 function addBananas() {
   let weHave = fruites.banana.amount;
   let cusWant = Number(document.getElementById("cust-banana-amount").value);
-  if (cusWant === 0) {
+  if (cusWant  <= 0) {
     document.getElementById("banana-error").classList.add("text-danger");
     setTimeout(() => {
       document.getElementById("banana-error").classList.remove("text-danger");
@@ -130,7 +137,7 @@ function addBananas() {
     ).innerHTML = `We have only ${weHave} Pc`;
     document.getElementById("banana-error").classList.add("text-danger");
   } else {
-    if (confirm("Press a button!\nEither OK or Cancel.")) {
+    if (confirm("Press Ok to Place Order ")) {
       let price = fruites.banana.price;
       addFruitToCart(cusWant, price);
       let itemLeft = weHave - cusWant;
@@ -145,7 +152,7 @@ function addBananas() {
 function addApples() {
   let weHave = fruites.apples.amount;
   let cusWant = Number(document.getElementById("cust-apple-amount").value);
-  if (cusWant === 0) {
+  if (cusWant  <= 0) {
     document.getElementById("apple-error").classList.add("text-danger");
     setTimeout(() => {
       document.getElementById("apple-error").classList.remove("text-danger");
@@ -156,7 +163,7 @@ function addApples() {
     ).innerHTML = `We have only ${weHave} Pc`;
     document.getElementById("apple-error").classList.add("text-danger");
   } else {
-    if (confirm("Press a button!\nEither OK or Cancel.")) {
+    if (confirm("Press Ok to Place Order ")) {
       let price = fruites.apples.price;
       addFruitToCart(cusWant, price);
       let itemLeft = weHave - cusWant;
