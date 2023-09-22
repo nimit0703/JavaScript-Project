@@ -1,37 +1,11 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
 
 
-.background{
-    margin: 0;
-    padding: 0;
-    background-attachment: fixed;
-    width: 100%;
-    height: 100vh;
-    background-position: center;
-    background-size: cover;
-    /* display: flex; */
-    align-items: center;
-}
-
-.bg1{
-    background-image: url('assets/background-3.jpg');
-}
-.bg2{
-    background-image: url('assets/background-4.jpg');
-}
-.bg3{
-    background-image: url('assets/background-2.jpg');
-}
-.other-content{
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.383);
-}
-
 .product-details{
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 50px;
 }
 img{
     width: 450px;

@@ -19,8 +19,10 @@ document.querySelectorAll(".view-product").forEach(function(button){
         let ProductPrice = productSelected.getElementsByClassName('product-price')[0].innerHTML;
         let productData = new Product(productName, ProductDesc, ProductPrice, imgSrc);
         console.log(productData);
-        const queryString = `?productData=${(JSON.stringify(productData))}`;
-        console.log(queryString);
+        const queryString = `?productData=${encodeURIComponent(JSON.stringify(productData))}`;
+        // console.log(queryString);
+        console.log(`product.html${queryString}`);
+
         window.location.href = `product.html${queryString}`;
 
     })

@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (productDataString) {
         // Parse the product data object
-        const productData = JSON.parse((productDataString));
+        const productData = JSON.parse(decodeURIComponent(productDataString));
         document.getElementById('product-name').innerHTML = productData.name;
         document.getElementById('product-desc').innerHTML = productData.desc;
         document.getElementById('product-image').src = productData.img;
@@ -17,3 +17,6 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log(productData);
     }
 });
+
+
+
