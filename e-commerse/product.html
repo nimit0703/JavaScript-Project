@@ -9,8 +9,25 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <nav>
+        <div id="navbar">
+          <h1>shopp</h1>
+          <span id="nav-option">
+            <h3>CLOTHING</h3>
+            <h3>ACCESSORIES</h3>
+          </span>
+          <span id="nav-search">
+            <input type="text" id="search" placeholder="Products"/></i>
+          </span>
+          <span id="nav-i">
+            <i class="bi bi-cart"></i>
+            <i class="bi bi-person-square"></i>
+          </span>
+        </div>
+      </nav>
     <div class="background bg1">
         <div class="other-content">
+            <div class="space" style="height: 100px;"></div>
             <h1 style="text-align: center; color: #fff;">Product Details</h1>
             <div class="product-details">
                 <div class="product-img">
@@ -23,7 +40,7 @@
                     <h2 id="product-price"><h2>
                         <div class="btn-div">
                             <button class="btn wishlist"><i class="bi bi-heart"></i> Like</button>
-                            <button class="btn cart"><i class="bi bi-cart-plus"></i> Cart</button>
+                            <button class="btn cart" onclick="addToCart()"><i class="bi bi-cart-plus"></i> Cart</button>
                         </div>
                 </div>
             </div>

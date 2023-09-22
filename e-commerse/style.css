@@ -58,22 +58,23 @@ nav{
 }
 
 #navbar #nav-search{
-    background-color: transparent;
+    /* background-color: transparent; */
     display: flex;
     align-items: center;
     width: 25vw;
 }
 #navbar #nav-search input{
     background-color: transparent;
-
+    padding-left: 30px;
     width: 23vw;
+    height: 40px;
     border-radius: 10px;
 }
 #navbar #nav-search i{
     background-color: transparent;
 
     position: absolute;
-    padding: 5px 370px;
+    padding: 5px 470px;
     margin-bottom: 5px;
     font-size: 1.2vw;
     text-align: center;
