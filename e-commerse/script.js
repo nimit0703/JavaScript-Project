@@ -1,3 +1,30 @@
+// Get references to the pages
+const homePage = document.getElementById("home-page");
+const productPage = document.getElementById("product-page");
+const cartPage = document.getElementById("cart-page");
+
+// Function to show a specific page and hide others
+function showPage(pageToShow) {
+    const pages = [homePage, productPage, cartPage];
+    pages.forEach((page) => {
+        page.style.display = page === pageToShow ? "block" : "none";
+    });
+}
+
+// Add event listeners to navigation links
+const homeLink = document.getElementById("home-link");
+const productLink = document.getElementById("product-link");
+const cartLink = document.getElementById("cart-link");
+
+homeLink.addEventListener("click", () => showPage(homePage));
+productLink.addEventListener("click", () => showPage(productPage));
+cartLink.addEventListener("click", () => showPage(cartPage));
+
+
+
+
+
+
 class Product {
     constructor(productName, ProductDesc, ProductPrice, imgSrc) {
         this.name = productName;

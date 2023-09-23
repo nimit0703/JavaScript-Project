@@ -6,11 +6,12 @@
     <title>E-commerse</title>
     <link rel="stylesheet" href="bootstrap.min.css" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="responsive.css">
   </head>
   <body>
     <nav>
       <div id="navbar">
-        <h1>shopp</h1>
+        <h1 id="home-link">shopp</h1>
         <span id="nav-option">
           <h3>CLOTHING</h3>
           <h3>ACCESSORIES</h3>
@@ -19,263 +20,340 @@
           <input type="text" id="search" placeholder="Products"/></i>
         </span>
         <span id="nav-i">
-          <i class="bi bi-cart"></i>
+          <a href=""><i class="bi bi-cart" id="cart-link"></i></a>
           <i class="bi bi-person-square"></i>
         </span>
       </div>
     </nav>
-    <div class="background bg1">
-      <div class="other-content">
-        <div id="display">
-          <!-- <img src="assets/background-1.jpg" alt="" srcset=""> -->
-          <img src="assets/background-5.jpg" alt="" srcset="" />
-          <!-- <img src="assets/background-2.jpg" alt="" srcset=""> -->
-          <!-- <img src="assets/background-3.jpg" alt="" srcset="" /> -->
-        </div>
-        <div class="clothing">
-          <div class="title"><h1>Clothing For Men And Women</h1></div>
-
-          <div class="my-cards">
-            <div class="my-card" cloth-product-id="1">
-              <div class="product-img">
-                <img src="assets/tshirt2.jpg" alt="" />
+    <section id="home-page">
+      <div class="background bg1">
+        <div class="other-content">
+          <div id="display">
+            <!-- <img src="assets/background-1.jpg" alt="" srcset=""> -->
+            <img src="assets/background-5.jpg" alt="" srcset="" />
+            <!-- <img src="assets/background-2.jpg" alt="" srcset=""> -->
+            <!-- <img src="assets/background-3.jpg" alt="" srcset="" /> -->
+          </div>
+          <div class="clothing">
+            <div class="title"><h1>Clothing For Men And Women</h1></div>
+  
+            <div class="my-cards">
+              <div class="my-card" cloth-product-id="1">
+                <div class="product-img">
+                  <img src="assets/tshirt2.jpg" alt="" />
+                </div>
+                <div class="product-name">White Tshirt</div>
+                <div class="product-des">
+                  cutton based material | ultra comfort | availbale in all size
+                </div>
+                <div class="product-price">RS 1500</div>
+                <button class="view-product">View Product</button>
               </div>
-              <div class="product-name">White Tshirt</div>
-              <div class="product-des">
-                cutton based material | ultra comfort | availbale in all size
+              <div class="my-card" cloth-product-id="2">
+                <div class="product-img">
+                  <img src="assets/tshirt1.jpg" alt="" />
+                </div>
+                <div class="product-name">MEmogy</div>
+                <div class="product-des">
+                  cutton based material | ultra comfort | availbale in all size
+                </div>
+                <div class="product-price">RS 500</div>
+                <button class="view-product">View Product</button>
               </div>
-              <div class="product-price">RS 1500</div>
-              <button class="view-product">View Product</button>
-            </div>
-            <div class="my-card" cloth-product-id="2">
-              <div class="product-img">
-                <img src="assets/tshirt1.jpg" alt="" />
+              <div class="my-card" cloth-product-id="3">
+                <div class="product-img">
+                  <img src="assets/tshirt3.jpg" alt="" />
+                </div>
+                <div class="product-name">Shirt</div>
+                <div class="product-des">
+                  cutton based material | ultra comfort | availbale in all size
+                </div>
+                <div class="product-price">RS 1499</div>
+                <button class="view-product">View Product</button>
               </div>
-              <div class="product-name">MEmogy</div>
-              <div class="product-des">
-                cutton based material | ultra comfort | availbale in all size
+              <div class="my-card" cloth-product-id="4">
+                <div class="product-img">
+                  <img src="assets/shirt1.webp" alt="" />
+                </div>
+                <div class="product-name">Lorem, ipsum.</div>
+                <div class="product-des">
+                  cutton based material | ultra comfort | availbale in all size
+                </div>
+                <div class="product-price">RS 1780</div>
+                <button class="view-product">View Product</button>
               </div>
-              <div class="product-price">RS 500</div>
-              <button class="view-product">View Product</button>
-            </div>
-            <div class="my-card" cloth-product-id="3">
-              <div class="product-img">
-                <img src="assets/tshirt3.jpg" alt="" />
+              <div class="my-card" cloth-product-id="5">
+                <div class="product-img"><img src="assets/hm1.jpg" alt="" /></div>
+                <div class="product-name">H & M</div>
+                <div class="product-des">
+                  cutton based material | ultra comfort | availbale in all size
+                </div>
+                <div class="product-price">RS 1500</div>
+                <button class="view-product">View Product</button>
               </div>
-              <div class="product-name">Shirt</div>
-              <div class="product-des">
-                cutton based material | ultra comfort | availbale in all size
-              </div>
-              <div class="product-price">RS 1499</div>
-              <button class="view-product">View Product</button>
-            </div>
-            <div class="my-card" cloth-product-id="4">
-              <div class="product-img">
-                <img src="assets/shirt1.webp" alt="" />
-              </div>
-              <div class="product-name">Lorem, ipsum.</div>
-              <div class="product-des">
-                cutton based material | ultra comfort | availbale in all size
-              </div>
-              <div class="product-price">RS 1780</div>
-              <button class="view-product">View Product</button>
-            </div>
-            <div class="my-card" cloth-product-id="5">
-              <div class="product-img"><img src="assets/hm1.jpg" alt="" /></div>
-              <div class="product-name">H & M</div>
-              <div class="product-des">
-                cutton based material | ultra comfort | availbale in all size
-              </div>
-              <div class="product-price">RS 1500</div>
-              <button class="view-product">View Product</button>
             </div>
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="background bg2">
-      <div class="other-content">
-        <div class="some-info">
-          <h1>About Our Products</h1>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit
-            libero unde labore corporis eum sapiente porro repudiandae beatae
-            totam aliquam illo officia autem commodi, saepe veniam eveniet
-            impedit. Natus eum facilis atque delectus nihil autem magnam
-            obcaecati. Unde officia repellat sint minima alias doloremque harum
-            maiores, deserunt, neque accusantium modi! Voluptas quasi delectus
-            repellat, recusandae quidem officiis, aliquam, saepe reprehenderit
-            quos in expedita sunt? Provident, minima! Ea, repudiandae? Omnis
-            neque dolore explicabo accusamus temporibus voluptate enim aut
-            eveniet accusantium iusto atque exercitationem iste est, quisquam ab
-            veniam laborum ipsum suscipit impedit. Cum excepturi quo beatae,
-            dolor accusantium minima amet velit?
-          </p>
-        </div>
-        <div class="clothing">
-          <div class="title"><h1>Watches For Men And Women</h1></div>
-
-          <div class="my-cards">
-            <div class="my-card">
-              <div class="product-img">
-                <img src="assets/watch1.webp" alt="" />
-              </div>
-              <div class="product-name">H & M</div>
-              <div class="product-des">
-                cutton based material | ultra comfort | availbale in all size
-              </div>
-              <div class="product-price">RS 1500</div>
-              <button class="view-product">View Product</button>
-            </div>
-            <div class="my-card">
-              <div class="product-img">
-                <img src="assets/watch2.webp" alt="" />
-              </div>
-              <div class="product-name">H & M</div>
-              <div class="product-des">
-                cutton based material | ultra comfort | availbale in all size
-              </div>
-              <div class="product-price">RS 1500</div>
-              <button class="view-product">View Product</button>
-            </div>
-            <div class="my-card">
-              <div class="product-img">
-                <img src="assets/watch3.webp" alt="" />
-              </div>
-              <div class="product-name">H & M</div>
-              <div class="product-des">
-                cutton based material | ultra comfort | availbale in all size
-              </div>
-              <div class="product-price">RS 1500</div>
-              <button class="view-product">View Product</button>
-            </div>
-            <div class="my-card">
-              <div class="product-img">
-                <img src="assets/watch5.webp" alt="" />
-              </div>
-              <div class="product-name">H & M</div>
-              <div class="product-des">
-                cutton based material | ultra comfort | availbale in all size
-              </div>
-              <div class="product-price">RS 1500</div>
-              <button class="view-product">View Product</button>
-            </div>
-            <div class="my-card">
-              <div class="product-img">
-                <img src="assets/watch4.webp" alt="" />
-              </div>
-              <div class="product-name">H & M</div>
-              <div class="product-des">
-                cutton based material | ultra comfort | availbale in all size
-              </div>
-              <div class="product-price">RS 1500</div>
-              <button class="view-product">View Product</button>
-            </div>
-          </div>
-          <div class="title">
-            <h1>Personalize your choise with This Products</h1>
-            <p style="width: 75%; padding: 24px">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit
-              molestias molestiae repellat quod placeat impedit tempora
-              necessitatibus recusandae animi ex quibusdam, amet ut officiis
-              natus modi? Non tempora cupiditate nisi! Repellendus, inventore.
-              Odit laborum, doloribus temporibus aut sequi non quos quo nostrum
-              vitae repellat culpa quod rem totam impedit vero! Dolorum a, sit
-              incidunt praesentium optio, adipisci magnam officia provident
-              blanditiis explicabo officiis numquam nulla autem veniam quae
-              deserunt ex mollitia, non dolore ratione architecto sequi!
-              Aspernatur eum soluta minus quam quibusdam consequuntur! Odit
-              numquam quod maxime placeat tempore a, rerum delectus ad, possimus
-              voluptates, eius vel obcaecati. Accusamus, sed.
+  
+      <div class="background bg2">
+        <div class="other-content">
+          <div class="some-info">
+            <h1>About Our Products</h1>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit
+              libero unde labore corporis eum sapiente porro repudiandae beatae
+              totam aliquam illo officia autem commodi, saepe veniam eveniet
+              impedit. Natus eum facilis atque delectus nihil autem magnam
+              obcaecati. Unde officia repellat sint minima alias doloremque harum
+              maiores, deserunt, neque accusantium modi! Voluptas quasi delectus
+              repellat, recusandae quidem officiis, aliquam, saepe reprehenderit
+              quos in expedita sunt? Provident, minima! Ea, repudiandae? Omnis
+              neque dolore explicabo accusamus temporibus voluptate enim aut
+              eveniet accusantium iusto atque exercitationem iste est, quisquam ab
+              veniam laborum ipsum suscipit impedit. Cum excepturi quo beatae,
+              dolor accusantium minima amet velit?
             </p>
           </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="background bg3">
-      <div class="other-content">
-        <div class="some-info">
-          <h1>About Our Products</h1>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit
-            libero unde labore corporis eum sapiente porro repudiandae beatae
-            totam aliquam illo officia autem commodi, saepe veniam eveniet
-            impedit. Natus eum facilis atque delectus nihil autem magnam
-            obcaecati. Unde officia repellat sint minima alias doloremque harum
-            maiores, deserunt, neque accusantium modi! Voluptas quasi delectus
-            repellat, recusandae quidem officiis, aliquam, saepe reprehenderit
-            quos in expedita sunt? Provident, minima! Ea, repudiandae? Omnis
-            neque dolore explicabo accusamus temporibus voluptate enim aut
-            eveniet accusantium iusto atque exercitationem iste est, quisquam ab
-            veniam laborum ipsum suscipit impedit. Cum excepturi quo beatae,
-            dolor accusantium minima amet velit?
-          </p>
-        </div>
-        <div class="clothing">
-          <div class="title"><h1>Watches For Men And Women</h1></div>
-
-          <div class="my-cards">
-            <div class="my-card">
-              <div class="product-img">
-                <img src="assets/watch1.webp" alt="" />
+          <div class="clothing">
+            <div class="title"><h1>Watches For Men And Women</h1></div>
+  
+            <div class="my-cards">
+              <div class="my-card">
+                <div class="product-img">
+                  <img src="assets/watch1.webp" alt="" />
+                </div>
+                <div class="product-name">H & M</div>
+                <div class="product-des">
+                  cutton based material | ultra comfort | availbale in all size
+                </div>
+                <div class="product-price">RS 1500</div>
+                <button class="view-product">View Product</button>
               </div>
-              <div class="product-name">H & M</div>
-              <div class="product-des">
-                cutton based material | ultra comfort | availbale in all size
+              <div class="my-card">
+                <div class="product-img">
+                  <img src="assets/watch2.webp" alt="" />
+                </div>
+                <div class="product-name">H & M</div>
+                <div class="product-des">
+                  cutton based material | ultra comfort | availbale in all size
+                </div>
+                <div class="product-price">RS 1500</div>
+                <button class="view-product">View Product</button>
               </div>
-              <div class="product-price">RS 1500</div>
-              <button class="view-product">View Product</button>
+              <div class="my-card">
+                <div class="product-img">
+                  <img src="assets/watch3.webp" alt="" />
+                </div>
+                <div class="product-name">H & M</div>
+                <div class="product-des">
+                  cutton based material | ultra comfort | availbale in all size
+                </div>
+                <div class="product-price">RS 1500</div>
+                <button class="view-product">View Product</button>
+              </div>
+              <div class="my-card">
+                <div class="product-img">
+                  <img src="assets/watch5.webp" alt="" />
+                </div>
+                <div class="product-name">H & M</div>
+                <div class="product-des">
+                  cutton based material | ultra comfort | availbale in all size
+                </div>
+                <div class="product-price">RS 1500</div>
+                <button class="view-product">View Product</button>
+              </div>
+              <div class="my-card">
+                <div class="product-img">
+                  <img src="assets/watch4.webp" alt="" />
+                </div>
+                <div class="product-name">H & M</div>
+                <div class="product-des">
+                  cutton based material | ultra comfort | availbale in all size
+                </div>
+                <div class="product-price">RS 1500</div>
+                <button class="view-product">View Product</button>
+              </div>
             </div>
-            <div class="my-card">
-              <div class="product-img">
-                <img src="assets/watch2.webp" alt="" />
-              </div>
-              <div class="product-name">H & M</div>
-              <div class="product-des">
-                cutton based material | ultra comfort | availbale in all size
-              </div>
-              <div class="product-price">RS 1500</div>
-              <button class="view-product">View Product</button>
-            </div>
-            <div class="my-card">
-              <div class="product-img">
-                <img src="assets/watch3.webp" alt="" />
-              </div>
-              <div class="product-name">H & M</div>
-              <div class="product-des">
-                cutton based material | ultra comfort | availbale in all size
-              </div>
-              <div class="product-price">RS 1500</div>
-              <button class="view-product">View Product</button>
-            </div>
-            <div class="my-card">
-              <div class="product-img">
-                <img src="assets/watch5.webp" alt="" />
-              </div>
-              <div class="product-name">H & M</div>
-              <div class="product-des">
-                cutton based material | ultra comfort | availbale in all size
-              </div>
-              <div class="product-price">RS 1500</div>
-              <button class="view-product">View Product</button>
-            </div>
-            <div class="my-card">
-              <div class="product-img">
-                <img src="assets/watch4.webp" alt="" />
-              </div>
-              <div class="product-name">H & M</div>
-              <div class="product-des">
-                cutton based material | ultra comfort | availbale in all size
-              </div>
-              <div class="product-price">RS 1500</div>
-              <button class="view-product">View Product</button>
+            <div class="title">
+              <h1>Personalize your choise with This Products</h1>
+              <p style="width: 75%; padding: 24px">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit
+                molestias molestiae repellat quod placeat impedit tempora
+                necessitatibus recusandae animi ex quibusdam, amet ut officiis
+                natus modi? Non tempora cupiditate nisi! Repellendus, inventore.
+                Odit laborum, doloribus temporibus aut sequi non quos quo nostrum
+                vitae repellat culpa quod rem totam impedit vero! Dolorum a, sit
+                incidunt praesentium optio, adipisci magnam officia provident
+                blanditiis explicabo officiis numquam nulla autem veniam quae
+                deserunt ex mollitia, non dolore ratione architecto sequi!
+                Aspernatur eum soluta minus quam quibusdam consequuntur! Odit
+                numquam quod maxime placeat tempore a, rerum delectus ad, possimus
+                voluptates, eius vel obcaecati. Accusamus, sed.
+              </p>
             </div>
           </div>
         </div>
       </div>
+  
+      <div class="background bg3">
+        <div class="other-content">
+          <div class="some-info">
+            <h1>About Our Products</h1>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit
+              libero unde labore corporis eum sapiente porro repudiandae beatae
+              totam aliquam illo officia autem commodi, saepe veniam eveniet
+              impedit. Natus eum facilis atque delectus nihil autem magnam
+              obcaecati. Unde officia repellat sint minima alias doloremque harum
+              maiores, deserunt, neque accusantium modi! Voluptas quasi delectus
+              repellat, recusandae quidem officiis, aliquam, saepe reprehenderit
+              quos in expedita sunt? Provident, minima! Ea, repudiandae? Omnis
+              neque dolore explicabo accusamus temporibus voluptate enim aut
+              eveniet accusantium iusto atque exercitationem iste est, quisquam ab
+              veniam laborum ipsum suscipit impedit. Cum excepturi quo beatae,
+              dolor accusantium minima amet velit?
+            </p>
+          </div>
+          <div class="clothing">
+            <div class="title"><h1>Watches For Men And Women</h1></div>
+  
+            <div class="my-cards">
+              <div class="my-card">
+                <div class="product-img">
+                  <img src="assets/watch1.webp" alt="" />
+                </div>
+                <div class="product-name">H & M</div>
+                <div class="product-des">
+                  cutton based material | ultra comfort | availbale in all size
+                </div>
+                <div class="product-price">RS 1500</div>
+                <button class="view-product">View Product</button>
+              </div>
+              <div class="my-card">
+                <div class="product-img">
+                  <img src="assets/watch2.webp" alt="" />
+                </div>
+                <div class="product-name">H & M</div>
+                <div class="product-des">
+                  cutton based material | ultra comfort | availbale in all size
+                </div>
+                <div class="product-price">RS 1500</div>
+                <button class="view-product">View Product</button>
+              </div>
+              <div class="my-card">
+                <div class="product-img">
+                  <img src="assets/watch3.webp" alt="" />
+                </div>
+                <div class="product-name">H & M</div>
+                <div class="product-des">
+                  cutton based material | ultra comfort | availbale in all size
+                </div>
+                <div class="product-price">RS 1500</div>
+                <button class="view-product">View Product</button>
+              </div>
+              <div class="my-card">
+                <div class="product-img">
+                  <img src="assets/watch5.webp" alt="" />
+                </div>
+                <div class="product-name">H & M</div>
+                <div class="product-des">
+                  cutton based material | ultra comfort | availbale in all size
+                </div>
+                <div class="product-price">RS 1500</div>
+                <button class="view-product">View Product</button>
+              </div>
+              <div class="my-card">
+                <div class="product-img">
+                  <img src="assets/watch4.webp" alt="" />
+                </div>
+                <div class="product-name">H & M</div>
+                <div class="product-des">
+                  cutton based material | ultra comfort | availbale in all size
+                </div>
+                <div class="product-price">RS 1500</div>
+                <button class="view-product">View Product</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="product-page">
+      <div class="background bg1">
+        <div class="other-content">
+            <div class="space" style="height: 100px;"></div>
+            <h1 style="text-align: center; color: #fff;">Product Details</h1>
+            <div class="product-details" id="product">
+                <div class="product-img">
+                    <img id="product-image" src="" alt="Product Image">
+                </div>
+                <div class="product-data">
+                    <h2 id="product-name"></h2>
+                    <h3 id="product-desc"></h3>
+                    <h3 id="product-desc-sm">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto, eius quo architecto, nisi impedit eaque minus ducimus laborum nesciunt nobis earum assumenda vitae. Dolor ex impedit, consequuntur odit id dolorem.</h3>
+                    <h2 id="product-price"><h2>
+                        <div class="btn-div">
+                            <button class="btn wishlist"><i class="bi bi-heart"></i> Like</button>
+                            <button class="btn cart" onclick="addToCart()"><i class="bi bi-cart-plus"></i> Cart</button>
+                        </div>
+                </div>
+            </div>
+            
+        </div>
     </div>
+    </section>
+
+    <section id="cart-page">
+      <div class="background bg1">
+        <div class="other-content">
+          <div class="container">
+            <div id="checkout">
+              <h1>Check Out</h1>
+              <div class="total-item-count">
+                <h2>Total Item:</h2>
+                <span id="itemCount">0</span>
+              </div>
+              <div class="display-pay">
+                <div id="display-items">
+                  <div id="prod-items">
+                      <div class="prod-item">
+                          <div class="img">
+                              <img src="assets/shirt1.webp" alt="" srcset="">
+                          </div>
+                          <div class="data">
+                              <div class="name">Navy blue shirt</div>
+                              <div class="amount">Amount : 
+                                <span class="amount">1500
+                                </span>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="prod-item">
+                          <div class="img">
+                              <img src="assets/shirt1.webp" alt="" srcset="">
+                          </div>
+                          <div class="data">
+                              <div class="name">Navy blue shirt</div>
+                              <div class="amount">Amount : <span class="amount">1500</span></div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                <div id="total-bill">
+                  <h1>Total Amount</h1>
+                  <h2>Amount: <span id="total-amount">1500</span></h2>
+                  
+                  <button class="placeOrder">Place Order</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
 
     <script src="script.js"></script>
     <script src="bootstrap.min.js"></script>
