@@ -11,19 +11,75 @@
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#" id="home-link">Navbar <span class="home-i"><i class="bi bi-house-door-fill"></i></span></a>
-        <a class="navbar-brand" href="#" id="cart-link"><i class="bi bi-cart-fill"> cart</i></a>
+        <a class="navbar-brand" href="#" onclick="showPage('home-section')">Navbar <span class="home-i"><i class="bi bi-house-door-fill"></i></span></a>
+        <a class="navbar-brand" href="#" onclick="showPage('cart-section')"><i class="bi bi-cart-fill"> cart</i></a>
       </div>
     </nav>
 
     <!-- home section -->
     <section id="home-section">
-      home
+      <div class="container my-5">
+        <div id="products" class="row">
+          <div class="card col-sm-5 mx-2 my-3" style="width: 18rem;">
+            <img src="assets/tshirt1.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Product 1</h5>
+              <p class="card-text">product 1 desc</p>
+              <a href="#" class="btn btn-primary" onclick="showPage('product-section')">See in Details</a>
+            </div>
+          </div>
+          <div class="card col-sm-5 mx-2 my-3" style="width: 18rem;">
+            <img src="assets/tshirt1.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Product 2</h5>
+              <p class="card-text">product 2 desc</p>
+              <a href="#" class="btn btn-primary">See in Details</a>
+            </div>
+          </div>
+          <div class="card col-sm-5 mx-2 my-3" style="width: 18rem;">
+            <img src="assets/tshirt1.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Product 3</h5>
+              <p class="card-text">product 3 desc</p>
+              <a href="#" class="btn btn-primary">See in Details</a>
+            </div>
+          </div>
+          <div class="card col-sm-5 mx-2 my-3" style="width: 18rem;">
+            <img src="assets/tshirt1.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Product 4</h5>
+              <p class="card-text">product 4 desc</p>
+              <a href="#" class="btn btn-primary">See in Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- product section -->
     <section id="product-section">
-      product
+      <div class="row my-5 ">
+        <div class="container-fluid col-sm-5 main-img" style="margin-right: 0; padding-left: 150px;">
+          <img src="assets/tshirt1.jpg" class="img-fluid" alt="Responsive image">
+        </div>
+        <div class="container-fluid col-sm-5">
+          <div id="product-name" class="my-3">product 1</div>
+          <div id="product-desc" class="mb-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores, magni.</div>
+          <h4 class="my-3">other images</h4>
+          <div class="my-3">Amount : <span id="prduct-price"></span></div>
+          <div id="product-other-img row my-5">
+            <img src="assets/tshirt1.jpg" alt="..." class="img-thumbnail col-sm-2">
+            <img src="assets/tshirt1.jpg" alt="..." class="img-thumbnail col-sm-2">
+            <img src="assets/tshirt1.jpg" alt="..." class="img-thumbnail col-sm-2">
+          </div>
+
+          <div id="product-purchance" class="row my-5" >
+            <button type="button" class="btn btn-info btn-lg col-sm-4 mx-3"><i class="bi bi-heart-fill" style="color: #fff; font-size: 1.75vw;"></i> Wishlist</button>
+            <button type="button" class="btn btn-warning btn-lg col-sm-4"><i class="bi bi-cart-fill" style="color: #fff; font-size: 1.75vw;"></i> Add to cart</button>
+
+          </div>
+        </div>
+      </div>
     </section>
     
     <!-- cart section -->

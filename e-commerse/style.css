@@ -3,3 +3,15 @@ nav i{
     margin: 0 2vw;
 
 }
+
+.main-img img{
+    width: 380px;
+    height: 420px;
+}
+#product-other-img{
+    margin-top: 10px;
+}
+#product-other-img img{
+    width: 100px;
+    height: 110px;
+}
