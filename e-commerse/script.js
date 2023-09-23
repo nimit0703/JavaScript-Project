@@ -18,3 +18,20 @@ document.addEventListener("DOMContentLoaded", function () {
     // Your code here
     showPage('home-section');
 });
+
+
+document.querySelectorAll('.view-product').forEach(function (button){
+    button.addEventListener('click',function(event){
+        const productCard = event.target.closest(".card");
+
+        // Retrieve data from the clicked card
+        const productId = productCard.getAttribute("data-product-id");
+        const productName = productCard.getElementsByClassName('prod-name').textContent;
+        const productDesc = productCard.getElementsByClassName('prod-desc').textContent;
+        const productImg = productCard.getElementsByClassName('prod-img').src;
+
+        console.log()
+    })
+});
+
+document.getElementsByClassName
