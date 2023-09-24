@@ -25,7 +25,9 @@
             <div class="card-body">
               <h5 class="prod-name">Product 1</h5>
               <p class="prod-desc">product 1 desc</p>
-              <a href="#" class="btn btn-primary view-product" onclick="showPage('product-section')">See in Details</a>
+              <p class="prod-amount" style="display: inline;">1500</p><span> Rs /-</span>
+              <br>
+              <a href="#" class="btn btn-primary view-product my-2" onclick="showPage('product-section')">See in Details</a>
             </div>
           </div>
           <div class="card col-sm-5 mx-2 my-3" style="width: 18rem;" data-product-id="2">
@@ -67,7 +69,7 @@
           <div id="product-name" class="my-3">product 1</div>
           <div id="product-desc" class="mb-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores, magni.</div>
           <h4 class="my-3">other images</h4>
-          <div class="my-3">Amount : <span id="prduct-price"></span></div>
+          <div class="my-3">Amount : <span id="product-amount"></span></div>
           <div id="product-other-img row my-5">
             <img src="assets/tshirt1.jpg" alt="..." class="img-thumbnail col-sm-2">
             <img src="assets/tshirt1.jpg" alt="..." class="img-thumbnail col-sm-2">
@@ -85,45 +87,35 @@
     
     <!-- cart section -->
     <section id="cart-section">
-      <div class="container py-5">
+      <div class="container py-5" id="cart-change">
         <div class="container-fluid row my-5">
           <div class="container col-sm-8 ">
-            <div id="cart-products ">
-              <div class="cart-product row bg-body-secondary p-2 mx-4 my-3" data-product-id="1">
-                <div class="img col-sm-2">
-                  <img src="assets/tshirt1.jpg" alt="..." class="img-thumbnail">
-                </div>
-                <div class="cart-product-data col-sm-6">
-                  <div class="cart-prod-name">product</div>
-                  <div class="cart-prod-amount">amount</div>
-                </div>
-              </div>
-              <div class="cart-product row bg-body-secondary p-2 mx-4 my-3" data-product-id="1">
-                <div class="img col-sm-2">
-                  <img src="assets/tshirt1.jpg" alt="..." class="img-thumbnail">
-                </div>
-                <div class="cart-product-data col-sm-6">
-                  <div class="cart-prod-name">product</div>
-                  <div class="cart-prod-amount">amount</div>
-                </div>
-              </div>
+            <div id="cart-products">
             </div>
 
           </div>
           <div class="col-sm-4 bg-body-secondary p-3">
               <div class="bg-warning "><i class="bi bi-cart-fill" style="color: #fff; font-size: 1.75vw;"></i>Cart </div>
             <div class="py-3 ">
-              <div>Amount : <span id="amount"></span>1200</div>
-              <div>Tax : <span id="tax"></span>200</div>
-              <div>Delivary Charge : <span id="d-charge"></span>50</div>
+              <div>Amount : <span id="amount"></span></div>
+              <div>Tax : <span id="tax"></span></div>
+              <div>Delivary Charge : <span id="d-charge"></span></div>
               <hr>
-              <div>Total Amount: <span id="total-amount"></span>1450</div>
+              <div>Total Amount: <span id="total-amount"></span></div>
             </div>
             <button type="button" class="btn btn-warning btn-lg"> Proceed to Pay</button>
 
           </div>
 
         </div>
+      </div>
+      <div id="cart-default">
+          <div class="empty-cart container-fluid">
+            <h1> Cart is Empty <i class="bi bi-emoji-frown"></i>
+            </h1>
+            <button type="button" class="btn btn-primary btn-lg" onclick="showPage('home-section')">Purchace</button>
+
+          </div>
       </div>
     </section>
 
