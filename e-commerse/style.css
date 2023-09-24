@@ -10,6 +10,7 @@ nav i{
 }
 
 .prod-img{
+    height: 250px;
     padding: 10px 20px;
     transition: transform 0.2s; /* Add a smooth transition effect */
 }
