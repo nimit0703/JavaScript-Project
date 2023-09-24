@@ -31,11 +31,7 @@ document.querySelectorAll(".view-product").forEach(function (button) {
     const productImg = productCard.getElementsByClassName("prod-img")[0].src;
 
     console.log(productName);
-    let productSelected = new Product(
-      productId,
-      productName,
-      productDesc,
-      productImg
+    let productSelected = new Product(productId,productName,productDesc,productImg
     );
     setProductPagePara(productSelected);
   });
@@ -64,6 +60,7 @@ function setProductPagePara(productDetails) {
 
   addToCartButton.addEventListener('click',function(){
     cartItems.push(productDetails);
+    addToCardDOM();
   })
 }
 
