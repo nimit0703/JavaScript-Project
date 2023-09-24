@@ -132,5 +132,11 @@ function createCartProduct(productDetails) {
   return cartProduct;
 }
 
+function paymentDone(){
+  cartItems.length = 0;
+  document.getElementById('cart-products').innerHTML = '';
+  document.getElementById("cart-change").style.display = 'none';
+  document.getElementById("cart-default").style.display = 'block';
+}
 const cartItems = [];
 

@@ -8,6 +8,14 @@ nav i{
     width: 380px;
     height: 420px;
 }
+
+.prod-img{
+    padding: 10px 20px;
+    transition: transform 0.2s; /* Add a smooth transition effect */
+}
+.prod-img:hover{
+    transform: scale(1.1); /* Increase the size by 10% (adjust as needed) */
+}
 #product-other-img{
     margin-top: 10px;
 }
@@ -38,3 +46,50 @@ nav i{
     font-size: 1vw;
 }
 
+.card{
+    transition: transform 0.2s; /* Add a smooth transition effect */
+}
+
+.card:hover{
+    transform: scale(1.07); /* Increase the size by 10% (adjust as needed) */
+    border-color: rgb(93, 255, 74);
+
+}
+
+#product-name{
+    /* color: firebrick; */
+    font-weight: 700;
+    font-size: 4vw;
+}
+
+#product-desc{
+    font-size: 2vw;
+    overflow: hidden;
+}
+
+#product-section h4{
+    color: rgb(64, 64, 250);
+    font-size: 2vw;
+    font-weight: 400;
+}
+
+.bill-title{
+    text-align: center;
+    margin-top: 0;
+    width: 100%;
+}
+.bill-title i{
+    margin: 5px;
+}
+#amount{
+    margin-left: 60px;
+}
+#tax{
+    margin-left: 100px;
+}
+#d-charge{
+    margin-left: 10px;
+}
+#total-amount{
+    margin-left: 30px;
+}

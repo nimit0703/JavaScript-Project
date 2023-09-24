@@ -60,16 +60,16 @@
     </section>
 
     <!-- product section -->
-    <section id="product-section">
-      <div class="row my-5 ">
+    <section id="product-section" class="px-5">
+      <div class="row my-5 border border-black py-3 bg-light-subtle">
         <div class="container-fluid col-sm-5 main-img" style="margin-right: 0; padding-left: 150px;">
           <img src="assets/tshirt1.jpg"  class="img-fluid" alt="Responsive image">
         </div>
         <div class="container-fluid col-sm-5">
-          <div id="product-name" class="my-3">product 1</div>
-          <div id="product-desc" class="mb-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores, magni.</div>
-          <h4 class="my-3">other images</h4>
+          <div id="product-name" class="my-3"></div>
+          <div id="product-desc" class="mb-5"></div>
           <div class="my-3">Amount : <span id="product-amount"></span></div>
+          <h4 class="my-3">other images</h4>
           <div id="product-other-img row my-5">
             <img src="assets/tshirt1.jpg" alt="..." class="img-thumbnail col-sm-2">
             <img src="assets/tshirt1.jpg" alt="..." class="img-thumbnail col-sm-2">
@@ -95,15 +95,15 @@
 
           </div>
           <div class="col-sm-4 bg-body-secondary p-3">
-              <div class="bg-warning "><i class="bi bi-cart-fill" style="color: #fff; font-size: 1.75vw;"></i>Cart </div>
+              <div class="bg-warning bill-title"><i class="bi bi-cart-fill" style="color: #fff; font-size: 1.75vw;"></i>Cart </div>
             <div class="py-3 ">
-              <div>Amount : <span id="amount"></span></div>
-              <div>Tax : <span id="tax"></span></div>
-              <div>Delivary Charge : <span id="d-charge"></span></div>
+              <div class="bill-titles">Amount : <span id="amount"></span></div>
+              <div class="bill-titles">Tax : <span id="tax"></span></div>
+              <div class="bill-titles">Delivary Charge : <span id="d-charge"></span></div>
               <hr>
-              <div>Total Amount: <span id="total-amount"></span></div>
+              <div class="bill-titles">Total Amount: <span id="total-amount"></span></div>
             </div>
-            <button type="button" class="btn btn-warning btn-lg"> Proceed to Pay</button>
+            <button type="button" class="btn btn-primary btn-lg" onclick="paymentDone()"> Proceed to Pay</button>
 
           </div>
 
