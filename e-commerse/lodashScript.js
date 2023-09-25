@@ -26,7 +26,7 @@ document.querySelectorAll(".view-product").forEach(function (button) {
     const productAmount = _.get(productCard.querySelector('.prod-amount'), 'textContent');
     const productImg = _.get(productCard.querySelector('.prod-img'), 'src');
 
-    console.log(productName);
+    console.log(productId,productName);
     let productSelected = new Product(productId, productName, productDesc, productAmount, productImg);
     setProductPagePara(productSelected);
   });
@@ -69,10 +69,10 @@ function refreshBill() {
     return accumulator + parseFloat(currentItem.amount);
   }, 0);
 
-  const tax = amount * 0.25;
-  const dCharge = (amount + tax) >= 5000 ? 0 : 150;
-  const totalAmount = amount + tax + dCharge;
-  console.log(amount, tax, dCharge, totalAmount);
+  const tax = _.multiply(amount, 0.25); 
+  const dCharge = amount + tax >= 5000 ? 0 : 150; 
+  const totalAmount = _.add(amount, tax, dCharge); 
+  // console.log(amount, tax, dCharge, totalAmount);
 
   document.getElementById("amount").innerHTML = amount;
   document.getElementById("tax").innerHTML = tax;
@@ -82,9 +82,22 @@ function refreshBill() {
 
 function addToCartDOM(productDetails) {
   const cartProducts = document.getElementById('cart-products');
-  const newCartProduct = createCartProduct(productDetails);
-  cartProducts.appendChild(newCartProduct);
+  const existingCartProduct = cartProducts.querySelector(`[data-product-id="${productDetails.id}"]`);
+  
+
+  if (existingCartProduct) {
+    modifyCartProduct(existingCartProduct, productDetails);
+  } else {
+    const newCartProduct = createCartProduct(productDetails);
+    cartProducts.appendChild(newCartProduct);
+  }
   console.log(cartProducts);
+}
+
+function modifyCartProduct(existingCartProduct, productDetails) {
+  const piecesElement = Number(existingCartProduct ? existingCartProduct.querySelector('.prod-pices').textContent : 0);
+  existingCartProduct.querySelector('.prod-pices').textContent = piecesElement+1;
+
 }
 
 function createCartProduct(productDetails) {
@@ -113,8 +126,14 @@ function createCartProduct(productDetails) {
   productAmountDiv.classList.add("cart-prod-amount");
   productAmountDiv.textContent = productDetails.amount;
 
+
+  const productPices = document.createElement("div");
+  productPices.classList.add("prod-pices");
+  productPices.textContent = 1;
+
   cartProductData.appendChild(productNameDiv);
   cartProductData.appendChild(productAmountDiv);
+  cartProductData.appendChild(productPices);
 
   cartProduct.appendChild(imgDiv);
   cartProduct.appendChild(cartProductData);
@@ -124,9 +143,12 @@ function createCartProduct(productDetails) {
 
 function paymentDone() {
   cartItems.length = 0;
-  document.getElementById('cart-products').innerHTML = '';
   document.getElementById("cart-change").style.display = 'none';
   document.getElementById("cart-default").style.display = 'block';
+  const cartProducts = document.getElementById('cart-products');
+  while (cartProducts.hasChildNodes) {
+    cartProducts.removeChild(cartProducts.firstChild);
+  }
 }
 
 const cartItems = [];
