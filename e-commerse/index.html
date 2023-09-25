@@ -71,7 +71,7 @@
               <a href="#" class="btn btn-primary view-product my-2" onclick="showPage('product-section')">See in Details</a>
             </div>
           </div>
-          <div class="card col-sm-5 mx-2 my-3" style="width: 18rem;" data-product-id="1">
+          <div class="card col-sm-5 mx-2 my-3" style="width: 18rem;" data-product-id="2">
             <img src="assets/tshirt2.jpg" class="card-img-top prod-img" alt="...">
             <div class="card-body">
               <h5 class="prod-name">japra 3Solid color</h5>
@@ -81,7 +81,7 @@
               <a href="#" class="btn btn-primary view-product my-2" onclick="showPage('product-section')">See in Details</a>
             </div>
           </div>
-          <div class="card col-sm-5 mx-2 my-3" style="width: 18rem;" data-product-id="1">
+          <div class="card col-sm-5 mx-2 my-3" style="width: 18rem;" data-product-id="3">
             <img src="assets/tshirt3.jpg" class="card-img-top prod-img" alt="...">
             <div class="card-body">
               <h5 class="prod-name">Top brand Tshirt</h5>
@@ -91,7 +91,7 @@
               <a href="#" class="btn btn-primary view-product my-2" onclick="showPage('product-section')">See in Details</a>
             </div>
           </div>
-          <div class="card col-sm-5 mx-2 my-3" style="width: 18rem;" data-product-id="1">
+          <div class="card col-sm-5 mx-2 my-3" style="width: 18rem;" data-product-id="4">
             <img src="assets/shirt1.webp" class="card-img-top prod-img" alt="...">
             <div class="card-body">
               <h5 class="prod-name">Best Of Shopp</h5>
@@ -224,8 +224,8 @@
     </section>
 
     <!-- product section -->
-    <section id="product-section" class="px-5">
-      <div class="row my-5 border border-black py-3 bg-light-subtle" id="prod-sec-prod">
+    <section id="product-section" class="px-5" >
+      <div class="row my-5 border border-black py-3 bg-light-subtle" id="prod-sec-prod" data-product-id="">
         <div class="container-fluid col-sm-5 main-img" style="margin-right: 0; padding-left: 150px;">
           <img src="assets/tshirt1.jpg"  class="img-fluid" alt="Responsive image">
         </div>
@@ -242,64 +242,8 @@
 
           <div id="product-purchance" class="row my-5" >
             <button type="button" class="btn btn-info btn-lg col-sm-4 mx-3"><i class="bi bi-heart-fill" style="color: #fff; font-size: 1.75vw;"></i> Wishlist</button>
-            <button type="button" class="btn btn-warning btn-lg col-sm-4"><i class="bi bi-cart-fill" style="color: #fff; font-size: 1.75vw;"></i> Add to cart</button>
+            <button type="button"  onclick="addToCartBtnClick()" class="btn btn-warning btn-lg col-sm-4"><i class="bi bi-cart-fill" style="color: #fff; font-size: 1.75vw;"></i> Add to cart</button>
 
-          </div>
-        </div>
-      </div>
-      <div class="container p-3">
-        
-        <div class="my-4" id="clothsSection">
-          <h1>Similar Products</h1>
-        </div>
-
-        <div class="row">
-          <div class="col-sm-9">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores nulla aspernatur sapiente hic pariatur praesentium aperiam facere fugiat quos, veritatis dolorem in iure sunt nam cumque sequi quibusdam quia voluptate dolore cupiditate consectetur neque. Ea enim neque ut. Cum, iusto?</div>
-        </div>
-        <div class="container my-5">
-          <div id="products" class="row">
-            <div class="card col-sm-5 mx-2 my-3" style="width: 18rem;" data-product-id="13">
-              <img src="assets/tshirt1.jpg" class="card-img-top prod-img" alt="...">
-              <div class="card-body">
-                <h5 class="prod-name">starva Gen collection</h5>
-                <p class="prod-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, illum.</p>
-                <p class="prod-amount" style="display: inline;">1980</p><span> Rs /-</span>
-                <br>
-                <a href="#" class="btn btn-primary view-product my-2" onclick="showPage('product-section')">See in Details</a>
-              </div>
-            </div>
-            <div class="card col-sm-5 mx-2 my-3" style="width: 18rem;" data-product-id="12">
-              <img src="assets/tshirt2.jpg" class="card-img-top prod-img" alt="...">
-              <div class="card-body">
-                <h5 class="prod-name">japra 3Solid color</h5>
-                <p class="prod-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo deserunt rem nesciunt?</p>
-                <p class="prod-amount" style="display: inline;">2799</p><span> Rs /-</span>
-                <br>
-                <a href="#" class="btn btn-primary view-product my-2" onclick="showPage('product-section')">See in Details</a>
-              </div>
-            </div>
-            <div class="card col-sm-5 mx-2 my-3" style="width: 18rem;" data-product-id="11">
-              <img src="assets/tshirt3.jpg" class="card-img-top prod-img" alt="...">
-              <div class="card-body">
-                <h5 class="prod-name">Top brand Tshirt</h5>
-                <p class="prod-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                <p class="prod-amount" style="display: inline;">2459</p><span> Rs /-</span>
-                <br>
-                <a href="#" class="btn btn-primary view-product my-2" onclick="showPage('product-section')">See in Details</a>
-              </div>
-            </div>
-            <div class="card col-sm-5 mx-2 my-3" style="width: 18rem;" data-product-id="10">
-              <img src="assets/shirt1.webp" class="card-img-top prod-img" alt="...">
-              <div class="card-body">
-                <h5 class="prod-name">Best Of Shopp</h5>
-                <p class="prod-desc">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-                <p class="prod-amount" style="display: inline;">1577</p><span> Rs /-</span>
-                <br>
-                <a href="#" class="btn btn-primary view-product my-2" onclick="showPage('product-section')">See in Details</a>
-              </div>
-            </div>
-            
-            
           </div>
         </div>
       </div>
@@ -336,6 +280,16 @@
             <button type="button" class="btn btn-primary btn-lg" onclick="showPage('home-section')">Purchase</button>
 
           </div>
+      </div>
+      <div id="successMsg" >
+        <div class="container">
+          <div class="icon">
+            <i class="bi bi-check-circle-fill"></i>
+          </div>
+          <div class="msg">
+            Order Placed Successfully!
+          </div>
+        </div>
       </div>
     </section>
 

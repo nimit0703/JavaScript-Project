@@ -1,6 +1,4 @@
 const cartItems = [];
-
-
 const homePage = document.getElementById("home-section");
 const productPage = document.getElementById("product-section");
 const cartPage = document.getElementById("cart-section");
@@ -14,11 +12,11 @@ function showPage(pageToShow) {
   });
 }
 
-
-
 document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("cart-change").style.display = 'none';
-  document.getElementById("cart-default").style.display = 'block';
+  document.getElementById("cart-change").style.display = "none";
+  document.getElementById("cart-default").style.display = "block";
+  document.getElementById("successMsg").style.display = "none";
+
   showPage("home-section");
 });
 
@@ -26,14 +24,25 @@ document.querySelectorAll(".view-product").forEach(function (button) {
   button.addEventListener("click", function (event) {
     const productCard = event.target.closest(".card");
 
-    const productId = _.get(productCard, 'dataset.productId');
-    const productName = _.get(productCard.querySelector('.prod-name'), 'textContent');
-    const productDesc = _.get(productCard.querySelector('.prod-desc'), 'textContent');
-    const productAmount = _.get(productCard.querySelector('.prod-amount'), 'textContent');
-    const productImg = _.get(productCard.querySelector('.prod-img'), 'src');
+    
+    const productId = productCard.getAttribute("data-product-id");;
+    const productName = productId +" "+ _.get(
+      productCard.querySelector(".prod-name"),
+      "textContent"
+    );
+    const productDesc = _.get(
+      productCard.querySelector(".prod-desc"),
+      "textContent"
+    );
+    const productAmount = _.get(
+      productCard.querySelector(".prod-amount"),
+      "textContent"
+    );
+    const productImg = _.get(productCard.querySelector(".prod-img"), "src");
 
-    console.log(productId,productName);
-    let productSelected = new Product(productId, productName, productDesc, productAmount, productImg);
+    console.log(productId, productName);
+    let productSelected = new Product(productId,productName,productDesc,productAmount,productImg
+    );
     setProductPagePara(productSelected);
   });
 });
@@ -49,37 +58,54 @@ class Product {
 }
 
 function setProductPagePara(productDetails) {
-  const productSection = document.getElementById("prod-sec-prod");
-  const img = productSection.querySelectorAll("img");
-  img.forEach(function(param){
+  let productSection = document.getElementById("prod-sec-prod");
+  productSection.setAttribute("data-product-id", productDetails.id);
+  let img = productSection.querySelectorAll("img");
+  img.forEach(function (param) {
     param.src = productDetails.imgSrc;
-  })
-  const name = productSection.querySelector("#product-name");
+  });
+  let name = productSection.querySelector("#product-name");
   name.innerHTML = productDetails.name;
-  const desc = productSection.querySelector("#product-desc");
+  let desc = productSection.querySelector("#product-desc");
   desc.innerHTML = productDetails.desc;
-  const amount = productSection.querySelector("#product-amount");
+  let amount = productSection.querySelector("#product-amount");
   amount.innerHTML = productDetails.amount;
 
-  const addToCartButton = productSection.querySelector(".btn.btn-warning");
-
-  addToCartButton.addEventListener('click', function () {
-    cartItems.push(productDetails);
-    addToCartDOM(productDetails);
-    refreshBill();
-    document.getElementById("cart-change").style.display = 'block';
-    document.getElementById("cart-default").style.display = 'none';
-  });
 }
 
-function refreshBill() {
-  const amount = _.reduce(cartItems, (accumulator, currentItem) => {
-    return accumulator + parseFloat(currentItem.amount);
-  }, 0);
 
-  const tax = _.multiply(amount, 0.25); 
-  const dCharge = amount + tax >= 5000 ? 0 : 150; 
-  const totalAmount = _.add(amount, tax, dCharge); 
+function addToCartBtnClick(){
+  debugger;
+  let productSection = document.getElementById("prod-sec-prod");
+    let id = productSection.getAttribute("data-product-id");
+
+    let name = productSection.querySelector("#product-name").innerHTML;
+    let desc = productSection.querySelector("#product-desc").innerHTML;
+    let amount = productSection.querySelector("#product-amount").innerHTML;
+    let img = productSection.querySelector("img").src;
+
+    let currentProductDetails = new Product(id, name,desc, amount,img)
+
+
+    cartItems.push(currentProductDetails);
+    addToCartDOM(currentProductDetails);
+    refreshBill();
+    document.getElementById("cart-change").style.display = "block";
+    document.getElementById("cart-default").style.display = "none";
+    document.getElementById("successMsg").style.display = "none";
+}
+function refreshBill() {
+  const amount = _.reduce(
+    cartItems,
+    (accumulator, currentItem) => {
+      return accumulator + parseFloat(currentItem.amount);
+    },
+    0
+  );
+
+  const tax = _.multiply(amount, 0.25);
+  const dCharge = amount + tax >= 5000 ? 0 : 150;
+  const totalAmount = _.add(amount, tax, dCharge);
   // console.log(amount, tax, dCharge, totalAmount);
 
   document.getElementById("amount").innerHTML = amount;
@@ -89,9 +115,11 @@ function refreshBill() {
 }
 
 function addToCartDOM(productDetails) {
-  const cartProducts = document.getElementById('cart-products');
-  const existingCartProduct = cartProducts.querySelector(`[data-product-id="${productDetails.id}"]`);
-  
+  debugger;
+  const cartProducts = document.getElementById("cart-products");
+  const existingCartProduct = cartProducts.querySelector(
+    `[data-product-id="${productDetails.id}"]`
+  );
 
   if (existingCartProduct) {
     modifyCartProduct(existingCartProduct, productDetails);
@@ -103,14 +131,25 @@ function addToCartDOM(productDetails) {
 }
 
 function modifyCartProduct(existingCartProduct, productDetails) {
-  const piecesElement = Number(existingCartProduct ? existingCartProduct.querySelector('.prod-pices').textContent : 0);
-  existingCartProduct.querySelector('.prod-pices').textContent = piecesElement+1;
-
+  const piecesElement = Number(
+    existingCartProduct
+      ? existingCartProduct.querySelector(".prod-pices").textContent
+      : 0
+  );
+  existingCartProduct.querySelector(".prod-pices").textContent =
+    piecesElement + 1;
 }
 
 function createCartProduct(productDetails) {
   const cartProduct = document.createElement("div");
-  cartProduct.classList.add("cart-product", "row", "bg-body-secondary", "p-2", "mx-4", "my-3");
+  cartProduct.classList.add(
+    "cart-product",
+    "row",
+    "bg-body-secondary",
+    "p-2",
+    "mx-4",
+    "my-3"
+  );
   cartProduct.setAttribute("data-product-id", productDetails.id);
 
   const imgDiv = document.createElement("div");
@@ -134,7 +173,6 @@ function createCartProduct(productDetails) {
   productAmountDiv.classList.add("cart-prod-amount");
   productAmountDiv.textContent = productDetails.amount;
 
-
   const productPices = document.createElement("div");
   productPices.classList.add("prod-pices");
   productPices.textContent = 1;
@@ -151,11 +189,28 @@ function createCartProduct(productDetails) {
 
 function paymentDone() {
   cartItems.length = 0;
-  document.getElementById("cart-change").style.display = 'none';
-  document.getElementById("cart-default").style.display = 'block';
-  const cartProducts = document.getElementById('cart-products');
-  while (cartProducts.hasChildNodes) {
+  const cartProducts = document.getElementById("cart-products");
+  console.log("BEFORE WHILE");
+
+  // Use a while loop to remove all child nodes
+  while (cartProducts.hasChildNodes()) {
     cartProducts.removeChild(cartProducts.firstChild);
   }
-}
 
+  console.log("AFTER WHILE");
+  console.log(cartItems);
+  console.log(cartProducts);
+
+  
+    document.getElementById("cart-change").style.display = 'none';
+    document.getElementById("cart-default").style.display = 'none';
+    document.getElementById("successMsg").style.display = 'block';
+    
+    
+    setTimeout(() => {
+      document.getElementById("cart-change").style.display = 'none';
+      document.getElementById("cart-default").style.display = 'block';
+      document.getElementById("successMsg").style.display = 'none';
+    
+  }, 7000);
+}
