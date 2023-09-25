@@ -5,6 +5,7 @@ const cartPage = document.getElementById("cart-section");
 function showPage(pageToShow) {
   pageToShow = document.getElementById(pageToShow);
   const pages = [homePage, productPage, cartPage];
+
   _.forEach(pages, (page) => {
     page.style.display = page == pageToShow ? "block" : "none";
   });
@@ -44,8 +45,10 @@ class Product {
 
 function setProductPagePara(productDetails) {
   const productSection = document.getElementById("product-section");
-  const img = productSection.querySelector("img");
-  img.src = productDetails.imgSrc;
+  const img = productSection.querySelectorAll("img");
+  img.forEach(function(param){
+    param.src = productDetails.imgSrc;
+  })
   const name = productSection.querySelector("#product-name");
   name.innerHTML = productDetails.name;
   const desc = productSection.querySelector("#product-desc");
