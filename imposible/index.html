@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elusive Button</title>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      .container {
+        text-align: center;
+        background-color: aqua;
+        height: 100vh;
+        width: 60%;
+        position: relative; /* Added position:relative to container */
+      }
+
+      .outer-box {
+        padding: 10%;
+        background-color: aqua;
+      }
+
+      #elusiveButton {
+        position: absolute; /* Changed to absolute positioning */
+        transition: 0.5s;
+      }
+
+      #elusiveButton:hover {
+        cursor: pointer;
+      }
+
+      #hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img
+        id="dynamicImage"
+        src="./Animation - 1704990335383.gif"
+        alt="sds"
+        style="z-index: 100"
+      />
+      <p>Are you angry on me?</p>
+      <button id="elusiveButton" onmouseenter="moveButton()">Yes</button>
+      <button
+        id="nonMovingButton"
+        onclick="showHiddenText()"
+        style="margin-left: 50px"
+      >
+        No, never
+      </button>
+      <p id="hidden">I know you can't get angry on such a cutie</p>
+      <audio id="audio" src="./HappyHappy.mp3"></audio>
+
+    </div>
+
+    <script>
+      function moveButton() {
+        var button = document.getElementById("elusiveButton");
+        var container = document.querySelector(".container");
+
+        var maxX = container.clientWidth - button.clientWidth; // Adjusted maxX based on container width
+        var maxY = container.clientHeight - button.clientHeight; // Adjusted maxY based on container height
+
+        var randomX = Math.floor(Math.random() * maxX);
+        var randomY = Math.floor(Math.random() * maxY);
+
+        button.style.left = randomX + "px";
+        button.style.top = randomY + "px";
+
+        // Change image URL
+      }
+
+      function showHiddenText() {
+        var buttons = document.querySelectorAll('.container button');
+        buttons.forEach(function(button) {
+        button.style.display = 'none';
+        });
+        var audio = document.getElementById('audio');
+        audio.play();
+
+        var image = document.getElementById("dynamicImage");
+        image.src = "./happy.gif";
+        var hiddenText = document.getElementById("hidden");
+        var otherParagraph = document.querySelector(
+          ".container p:not(#hidden)"
+        );
+
+        // Show hidden text
+        hiddenText.style.display = "block";
+
+        // Hide other paragraph
+        otherParagraph.style.display = "none";
+      }
+    </script>
+  </body>
+</html>
